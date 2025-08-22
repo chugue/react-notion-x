@@ -279,6 +279,7 @@ export function Asset({
     if (source.includes('file.notion.so')) {
       source = block.properties?.source?.[0]?.[0]
     }
+
     const src = mapImageUrl(source, block as Block)
     const caption = getTextContent(block.properties?.caption)
     const alt = caption || 'notion image'
