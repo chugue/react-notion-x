@@ -276,8 +276,10 @@ export function Asset({
   } else if (block.type === 'image') {
     // console.log('image', block)
     // TODO: kind of a hack for now. New file.notion.so images aren't signed correctly
-    if (source.includes('file.notion.so')) {
-      source = block.properties?.source?.[0]?.[0]
+    if (source.includes('.gif')) {
+      if (source.includes('file.notion.so')) {
+        source = block.properties?.source?.[0]?.[0]
+      }
     }
 
     const src = mapImageUrl(source, block as Block)
