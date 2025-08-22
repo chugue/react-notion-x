@@ -25,7 +25,7 @@ export const getPageImageUrls = (
           const signedUrl = recordMap.signed_urls?.[block.id]
           let source = signedUrl || block.properties?.source?.[0]?.[0]
 
-          if (!source.includes('.gif')) {
+          if (source && !source.includes('.gif')) {
             if (source?.includes('file.notion.so')) {
               source = block.properties?.source?.[0]?.[0]
             }
