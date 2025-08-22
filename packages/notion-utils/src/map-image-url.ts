@@ -8,6 +8,10 @@ export const defaultMapImageUrl = (
     return undefined
   }
 
+  if (url.includes('.gif')) {
+    return url
+  }
+
   if (url.startsWith('data:')) {
     return url
   }
